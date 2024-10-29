@@ -5,10 +5,10 @@ import java.awt.event.ActionListener;
 public class CalculatorView extends JFrame {
     private JTextField firstNumber = new JTextField(10);
     private JTextField secondNumber = new JTextField(10);
-    private JButton addButton = new JButton("+");
-    private JButton subtractButton = new JButton("-");
-    private JButton multiplyButton = new JButton("*");
-    private JButton divideButton = new JButton("/");
+    public JButton addButton = new JButton("+");
+    public JButton subtractButton = new JButton("-");
+    public JButton multiplyButton = new JButton("*");
+    public JButton divideButton = new JButton("/");
     private JTextField resultField = new JTextField(10);
 
     public CalculatorView() {
