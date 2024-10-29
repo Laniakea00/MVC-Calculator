@@ -9,29 +9,39 @@ public class CalculatorView extends JFrame {
     public JButton subtractButton = new JButton("-");
     public JButton multiplyButton = new JButton("*");
     public JButton divideButton = new JButton("/");
-    private JTextField resultField = new JTextField(10);
+    private JTextField resultField = new JTextField(20);
 
     public CalculatorView() {
         setTitle("Calculator");
         setSize(300, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JPanel panel = new JPanel();
-        panel.add(new JLabel("Number 1:"));
-        panel.add(firstNumber);
-        panel.add(new JLabel("Number 2:"));
-        panel.add(secondNumber);
+        setLayout(new GridLayout(4, 1));  // Устанавливаем 4 строки для расположения элементов
 
-        panel.add(addButton);
-        panel.add(subtractButton);
-        panel.add(multiplyButton);
-        panel.add(divideButton);
+        JPanel inputPanel1 = new JPanel();
+        inputPanel1.add(new JLabel("Number 1:"));
+        inputPanel1.add(firstNumber);
 
-        panel.add(new JLabel("Result:"));
-        panel.add(resultField);
+        JPanel inputPanel2 = new JPanel();
+        inputPanel2.add(new JLabel("Number 2:"));
+        inputPanel2.add(secondNumber);
+
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(addButton);
+        buttonPanel.add(subtractButton);
+        buttonPanel.add(multiplyButton);
+        buttonPanel.add(divideButton);
+
+        JPanel resultPanel = new JPanel();
+        resultPanel.add(new JLabel("Result:"));
+        resultPanel.add(resultField);
 
         resultField.setEditable(false);
-        add(panel);
+
+        add(inputPanel1);
+        add(inputPanel2);
+        add(buttonPanel);
+        add(resultPanel);
     }
 
     public double getFirstNumber() throws NumberFormatException {
